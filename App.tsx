@@ -5,6 +5,9 @@ import { InfoGrid } from './components/InfoGrid';
 import { FoodDiary } from './components/FoodDiary';
 import { NutritionPromptModal } from './components/NutritionPromptModal';
 import { IntroPage } from './components/IntroPage';
+import { EnergyNeedsModal } from './components/EnergyNeedsModal';
+import { MacroCalculatorModal } from './components/MacroCalculatorModal';
+import { VideoPlayerModal } from './components/VideoPlayerModal';
 import { CASE_STUDIES } from './constants';
 
 const App: React.FC = () => {
@@ -105,10 +108,18 @@ const App: React.FC = () => {
               </div>
             </Card>
 
+            {/* Calculators Section */}
+            <div className="flex flex-col md:flex-row gap-4 mb-8 px-2">
+              <EnergyNeedsModal />
+              <MacroCalculatorModal />
+            </div>
+
             <FoodDiary data={activeStudy.foodDiary} />
             
-            <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-8 mb-12">
+            <div className="flex flex-col md:flex-row justify-center items-center gap-4 mt-8 mb-12 flex-wrap">
               <NutritionPromptModal />
+              
+              <VideoPlayerModal />
 
               <a 
                 href="https://docs.google.com/forms/d/e/1FAIpQLSdtUkJGo3QOE2UdYUd1XSd22Dy6mSkcPvyjJMGo93soozwWNg/viewform?usp=dialog"
